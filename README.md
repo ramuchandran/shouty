@@ -162,3 +162,31 @@ We can do all of this without writing any implementation yet.
 This is known as "outside-in" development. It helps us to ensure that when we do come to implementing our solution, we're implementing it based on real needs.
 
 
+-How can you express in a Cucumber Expression that matching some text is optional?
+
+Any text in a Cucumber Expression that is surrounded by parentheses `()` is considered optional.
+
+-What does a slash `/` separating words mean in a Cucumber Expression?
+Words in a Cucumber Expression that are separated by a slash `/` are considered alternates. There must be no whitespace between the word and the slash.
+
+-Which of the following Cucumber Expressions would match both "Given it weighed 3 grammes" and "Given it weighed 1 gramme"?
+
+Any text surrounded by parentheses `()` is considered optional.
+Any words separated by a slash `/` are considered to be alternates. 
+You can find full documentation about Cucumber Expressions at https://cucumber.io/docs/cucumber/cucumber-expressions
+
+-What role do Regular Expressions play in Cucumber Expressions?
+
+We use a Regular Expression to specify the text that should be matched when a custom Parameter Type is used in a Cucumber Expression.
+
+-How would you use the custom Parameter Type defined by the following code?
+
+
+@ParameterType("activated")
+public Status state(String activationState) {
+    return new Status(activationState);
+}
+
+The name of a custom Parameter Type is defined by the name of the method that is decorated with the `@ParameterType` annotation.
+
+
